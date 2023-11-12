@@ -7,7 +7,7 @@ pipeline {
 				sh "ls -al"
 				sh "java -version"				
 				sh 'chmod +x gradlew'
-				sh "./gradlew clean build -x test"	
+				sh "./gradlew clean bootjar"	
 				sh "ls -al"
 				sh "ls -al ./build"			
 				sh "ls -al ./build/libs"					
