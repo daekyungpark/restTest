@@ -5,8 +5,7 @@ pipeline {
             steps {
 				sh "pwd"
 				sh "ls -al"
-				sh "java -version"		
-				
+				sh "java -version"	
                 echo 'building the application...'
             }
         }
@@ -17,7 +16,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-			    cp -rf Jenkinsfile /home/izttotio/backend
+			    sh "cp -rf Jenkinsfile /home/izttotio/backend"
                 echo 'deploying the application...'
             }
         }
