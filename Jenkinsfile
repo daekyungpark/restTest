@@ -16,6 +16,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
+				sh "sudo chmod 755 /home/izttotio/backend"
 			    sh "cp -rf Jenkinsfile /home/izttotio/backend"
                 echo 'deploying the application...'
             }
