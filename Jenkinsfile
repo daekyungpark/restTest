@@ -6,6 +6,7 @@ pipeline {
 				sh "pwd"
 				sh "ls -al"
 				sh "java -version"	
+				sh "./gradlew clean build -x test"	
                 echo 'building the application...'
             }
         }
