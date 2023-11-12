@@ -1,6 +1,17 @@
 pipeline {
     agent any
     stages {
+		stage('Git Progress') {
+			steps {
+				git credentialsId: 'github_personal_access_token', 
+				url: 'https://github.com/daekyungpark/restTest.git'
+			  }
+			}
+		stage('Gradle Build') {
+			  steps {
+				sh 'gradle clean build -x test -b build-server.gradle'
+			  }
+		}
         stage('build') {
             steps {
 				sh "pwd"
